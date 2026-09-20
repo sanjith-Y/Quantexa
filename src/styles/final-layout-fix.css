@@ -1,0 +1,150 @@
+/* ==========================================================================
+   FINAL PRODUCTION LAYOUT SYSTEM & GEOMETRY OVERRIDE
+   ========================================================================== */
+
+/* 1. GLOBAL BOX MODEL RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+html, body, #root {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2. GRID AND FLEX CONTAINER CONTAINMENT */
+.grid > *,
+.flex > * {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. MASTER PAGE CONTAINER */
+.page-container,
+[class*="page-container"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 20px 24px 28px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+/* 4. SHARED PAGE HEADER GEOMETRY */
+.page-header-card,
+header.page-header {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 5. SHARED CARD & PANEL GEOMETRY */
+.card-panel,
+.panel-card,
+.glass-card,
+.app-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 16px !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* 6. KPI CARD STRUCTURAL GEOMETRY */
+.kpi-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+@media (max-width: 1535px) {
+  .kpi-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .kpi-card-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 7. TELEMETRY ROW GRID SPEC: minmax(0,1fr) auto */
+.telemetry-row,
+.data-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  column-gap: 12px !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 8px 4px !important;
+}
+
+.telemetry-row > *:last-child,
+.data-row > *:last-child {
+  text-align: right !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 8. STATUS TABLE GRID SPEC: 56px minmax(0,1fr) 90px */
+.status-table-row {
+  display: grid !important;
+  grid-template-columns: 56px minmax(0, 1fr) 90px !important;
+  column-gap: 8px !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 8px 4px !important;
+}
+
+.status-table-row > *:last-child {
+  text-align: right !important;
+}
+
+/* 9. BADGE & BUTTON CONTAINMENT */
+.badge-pill,
+span[class*="rounded-full"],
+span[class*="rounded-md"] {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+button {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 10. NO TOUCHING PANELS - FORCE VERTICAL GAPS */
+.space-y-3 > * + * {
+  margin-top: 12px !important;
+}
+
+.space-y-4 > * + * {
+  margin-top: 16px !important;
+}
+
+.space-y-6 > * + * {
+  margin-top: 24px !important;
+}
